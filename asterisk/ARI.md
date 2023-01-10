@@ -1,4 +1,4 @@
-#Asterisk REST Interface
+# Asterisk REST Interface
 
 [Asterisk REST Interface (ARI)](https://wiki.asterisk.org/wiki/pages/viewpage.action?pageId=29395573)
 

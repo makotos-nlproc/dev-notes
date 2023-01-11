@@ -54,6 +54,8 @@
 
 - [static wiki documentation](https://wiki.asterisk.org/wiki/display/AST/Asterisk+18+ARI)
   - 今回の作業対象がAsterisk 18なのでAsterisk 18のリンク
+- Asteriskは非同期のイベントをJSONメッセージとしてアプリケーションに送信するのにWebSocket(`/ari/event`)を使用する
+- ダイヤルプランとアプリケーションを接続するために`Stasis()`を使用する。外部アプリケーションの名前を指定してStasis()にチャネルを渡す。オプショナルの引数をアプリケーションに渡すことができる
 
 ## Example: ARI Hello World!
 
@@ -61,6 +63,13 @@
 
 - Asterisk 12以降がインストール・起動されてる
 - AsteriskにSIPのソフトフォンORハードフォンがchan_sipかchan_pjshipで登録されている
+
+準備
+
+- WebSocketのツールwscatのインストール
+- curlのインストール
+
+TODO
 
 - Configure Asterisk to enable ARI
 - Send a channel into Stasis

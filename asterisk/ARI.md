@@ -48,5 +48,22 @@
 - Webページから直接ARIにアクセスしない
 - シンプルな抽象化レイヤーを使用する
 
+# Getting Started with ARI
+
+[Getting Started with ARI](https://wiki.asterisk.org/wiki/display/AST/Getting+Started+with+ARI)
+
+- [static wiki documentation](https://wiki.asterisk.org/wiki/display/AST/Asterisk+18+ARI)
+  - 今回の作業対象がAsterisk 18なのでAsterisk 18のリンク
+
+## Example: ARI Hello World!
+
+前提
+
+- Asterisk 12以降がインストール・起動されてる
+- AsteriskにSIPのソフトフォンORハードフォンがchan_sipかchan_pjshipで登録されている
+
+- Configure Asterisk to enable ARI
+- Send a channel into Stasis
+- And playback "Hello World" to the channel
 
 

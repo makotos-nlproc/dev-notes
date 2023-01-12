@@ -12,6 +12,8 @@
 - ARIは非同期でAsteriskのプリミティブなオブジェクトを直感的なRESTインターフェースで提供する
 - ユーザーが制御しているオブジェクトの状態はWebSocket上でJSONイベントを使って伝達される
 
+extensionに内線の意味がある
+
 ## ARIの基礎
 
 3つの構成要素
@@ -59,19 +61,46 @@
 
 ## Example: ARI Hello World!
 
-前提
+### 前提
 
 - Asterisk 12以降がインストール・起動されてる
 - AsteriskにSIPのソフトフォンORハードフォンがchan_sipかchan_pjshipで登録されている
 
-準備
+### 準備
 
 - WebSocketのツールwscatのインストール
 - curlのインストール
 
-TODO
+### Asteriskの設定
 
-- Configure Asterisk to enable ARI
+1. http.confのAsterisk HTTPサービスを有効にする
+2. ari.confのARIユーザー設定する
+3. Stasisアプリケーション用のダイヤルプラン内戦番号を作成する
+
+#### freepbxの場合
+
+1は最初から設定されている？
+
+2はGUIの設定>Asterisk REST Interface Users>ユーザーの追加に対応
+
+3.
+
+---
+
+/etc/asteriskの中に上記confファイルがある。GUIからの編集が前提であり、直接は編集しない。
+
+http.confは以下2ファイルに紐付けられて(include)設定されている
+
+- http_additional.conf
+- http_custom.conf
+
+ari.confは以下4ファイルに紐付けられて(include)設定されている
+
+- ari_general_additional.conf
+- ari_general_custom.conf
+- ari_additional.conf
+- ari_additional_custom.conf
+
 - Send a channel into Stasis
 - And playback "Hello World" to the channel
 

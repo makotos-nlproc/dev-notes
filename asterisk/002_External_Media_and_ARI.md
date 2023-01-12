@@ -15,7 +15,7 @@
 - チャネルドライバーがメディアをブリッジから指定された宛先へ転送する
 - 自前のアプリケーションは、そのメディア受け取り、音声認識プロバイダーに要件を満たすように渡す
 - その結果を自前のアプリケーションは自由に使う（e.g. リアルタイム字幕）
-- 外部μディアチャネルはブリッジにメディアを注入することもできる
+- 外部メディアチャネルはブリッジにメディアを注入することもできる
 
 ## 実装
 
@@ -24,4 +24,20 @@
 必須のパラメータは、app、external_host、format
 
 チャネルを使い終わったら作成時のレスポンスであるチャネルオブジェクトをDELETEして終了させる
+
+## メモ
+
+### チャネルとは
+
+### ブリッジとは
+
+### （チャネルドライバー）とは
+
+### メモの参照
+
+- [オープンソースアプリケーションのアーキテクチャ - Asterisk](https://inzkyk.xyz/aosa/asterisk/)
+- [Introduction to ARI and Channels](https://wiki.asterisk.org/wiki/display/AST/Introduction+to+ARI+and+Channels)
+- [Introduction to ARI and Bridges](https://wiki.asterisk.org/wiki/display/AST/Introduction+to+ARI+and+Bridges)
+- [Introduction to ARI and Media Manipulation](https://wiki.asterisk.org/wiki/display/AST/Introduction+to+ARI+and+Media+Manipulation)
+- [Asterisk Configuration for ARI](https://wiki.asterisk.org/wiki/display/AST/Asterisk+Configuration+for+ARI)
 

@@ -100,7 +100,11 @@ exten => 1000,1,NoOp()
  same =>      n,Hangup()
 ```
 
-- Send a channel into Stasis
-- And playback "Hello World" to the channel
+### Hello World!
 
+- `wscat -c "ws://${ip_address}:8088/ari/events?api_key=${user_name}:${secret}&app=hello-world"`
+- 他SIPデバイスから1000へ内線をかける
+- wscatのログからchannel.idを確認
+- `curl -v -u {user_name}:${secret} -X POST "http://${ip_address}:8088/ari/channels/${channel_id}/playmedia=sound:hello-world"`
+- FreePBXのGUI、レポート>Asteriskログファイルよりログが確認できる
 

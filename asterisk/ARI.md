@@ -75,31 +75,30 @@ extensionに内線の意味がある
 
 1. http.confのAsterisk HTTPサービスを有効にする
 2. ari.confのARIユーザー設定する
-3. Stasisアプリケーション用のダイヤルプラン内戦番号を作成する
+3. Stasisアプリケーション用のダイヤルプラン内戦番号を作成・設定する
 
 #### freepbxの場合
+
+confファイルはGUIから編集する
 
 1は最初から設定されている？
 
 2はGUIの設定>Asterisk REST Interface Users>ユーザーの追加に対応
 
-3.
+3はGUIのアプリケーション>内線>新しいSIP\[chan_pjsip\]内線を追加からユーザー内線に番号と任意のディスプレイ名、シークレットを設定。
 
----
+（今回作業用にmac上のソフトフォン用に8001, iphone上のソフトフォン用に8002が設定・疎通済み）
 
-/etc/asteriskの中に上記confファイルがある。GUIからの編集が前提であり、直接は編集しない。
+1000を新規作成した。
 
-http.confは以下2ファイルに紐付けられて(include)設定されている
+GUI上アドミン>Config EditよりAsterisk Custom Configuration Filesのextensions_custom.conf以下を記述
 
-- http_additional.conf
-- http_custom.conf
-
-ari.confは以下4ファイルに紐付けられて(include)設定されている
-
-- ari_general_additional.conf
-- ari_general_custom.conf
-- ari_additional.conf
-- ari_additional_custom.conf
+```
+exten => 1000,1,NoOp()
+ same =>      n,Answer()
+ same =>      n,Stasis(hello-world)
+ same =>      n,Hangup()
+```
 
 - Send a channel into Stasis
 - And playback "Hello World" to the channel

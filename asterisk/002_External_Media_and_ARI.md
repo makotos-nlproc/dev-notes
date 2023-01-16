@@ -79,16 +79,32 @@ exten => 1000,1,NoOp()
 
 ##### Pythonの例
 
-略
+（略）
 
 ### ブリッジとは
+
+[Introduction to ARI and Bridges](https://wiki.asterisk.org/wiki/display/AST/Introduction+to+ARI+and+Bridges)
+
+- アスタリスクにおいて、ブリッジはそのブリッジに含まれるチャネル間の通信路を形成するチャネルのコンテナとみなすことができる
+- チャネル間のメディアの送受信、メディアの再生方法や再生するチャネルの制御に使用する
+- 詳しくは[Key Concepts - Bridges](https://wiki.asterisk.org/wiki/display/AST/Bridges)
+- ブリッジはARIを通して作成されたとき、そのブリッジの参加者間のメディアを調整する方法を決定するために指定可能なたくさんのアトリビュートを持つ
+  - mixing: ブリッジ内のすべてのチャネル間でメディアを受け渡しするかを指定。holdingと同時に使用できない
+  - dtmf_events: DTMFを認識できるようにアスタリスク上でメディアをデコードするかを指定。（略）
+  - proxy_media: メディアがクライアント間でリダイレクトされる場合でもアスタリスクを通過させるかを指定。（略）
+  - holding: （略）。ブリッジ内のチャネルには参加者とアナウンサーの二つの役割がある。参加者間ではメディアは共有されず、アナウンサーからのメディアは全参加チャネルで再生される
+- チャネルとは異なりStasisアプリケーションにおけるブリッジは自動でイベントをサブスクライブしないので、アプリケーションリソースを使ってサヌスクライブする必要がある
+- POST: `/applications/{app_name}/subscription`
+
+#### ブリッジとやりとりする例
+
+（略）
 
 ### （チャネルドライバー）とは
 
 ### メモの参照
 
 - [オープンソースアプリケーションのアーキテクチャ - Asterisk](https://inzkyk.xyz/aosa/asterisk/)
-- [Introduction to ARI and Bridges](https://wiki.asterisk.org/wiki/display/AST/Introduction+to+ARI+and+Bridges)
 - [Introduction to ARI and Media Manipulation](https://wiki.asterisk.org/wiki/display/AST/Introduction+to+ARI+and+Media+Manipulation)
 - [Asterisk Configuration for ARI](https://wiki.asterisk.org/wiki/display/AST/Asterisk+Configuration+for+ARI)
 

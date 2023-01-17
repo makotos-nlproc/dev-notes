@@ -23,6 +23,24 @@
 - 必須のパラメータは、app、external_host、format
 - チャネルを使い終わったら作成時のレスポンスであるチャネルオブジェクトをDELETEして終了させる
 
+### Asterisk External Media Sample
+
+[asterisk/asterisk-external-media](https://github.com/asterisk/asterisk-external-media)
+
+- ARI External Mediaの使い方のデモ
+- ブリッジからのオーディオをGoogle Speech APIを使って文字起こし
+- ari-transcriberが実行するタスク
+  - ari-clientのインスタンスを作成
+  - リアルタイム音声認識にアクセスできるWebSocketサーバーを作成
+  - Asteriskからのオーディオを受信するためのオーディオサーバーを起動する
+  - サーバーからオーディオを受け取り音声認識してWebSocketサーバーへ結果を送信するGoogle Speech Providerのインスタンスを作成する
+  - ARIインスタンスを使って以下を行う
+    - mixing bridgeの作成
+    - 監視されるカンファレンスブリッジにダイヤルするローカルチャネル（？）
+    - ローカルチャネルをmixing bridgeに配置する
+    - ExternalMediaチャネルを作成しオーディオをオーディオサーバーへ向かわせる
+    - ExternalMediaチャネルをmixing bridgeに配置する
+
 ## メモ
 
 ### チャネルとは

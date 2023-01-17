@@ -19,11 +19,9 @@
 
 ## 実装
 
-外部メディアチャネルを作成するには`/channels/externalMedia`へPOSTリクエストをする。標準的なARIチャネルオブジェクトが返される。
-
-必須のパラメータは、app、external_host、format
-
-チャネルを使い終わったら作成時のレスポンスであるチャネルオブジェクトをDELETEして終了させる
+- 外部メディアチャネルを作成するには`/channels/externalMedia`へPOSTリクエストをする。標準的なARIチャネルオブジェクトを含むExternalMediaオブジェクトが返される。このオブジェクトをブリッジに追加して操作する
+- 必須のパラメータは、app、external_host、format
+- チャネルを使い終わったら作成時のレスポンスであるチャネルオブジェクトをDELETEして終了させる
 
 ## メモ
 
